@@ -39,15 +39,17 @@ export interface CaseStudy {
   tags: string[];
   metrics: CaseStudyMetric;
   sections: {
-    problem: string;
-    users: string;
-    hypothesis: string;
-    scope: string;
-    solution: string;
-    results: string;
-    tradeoffs: string;
-    risks: string;
-    next: string;
+    introduction: string;
+    theProblem: string[];
+    userInsights: string[];
+    goalsAndMetrics: string[];
+    hypothesisAndAssumptions: string[];
+    solutionExploration: string[];
+    solutionWalkthrough: string[];
+    mvpAndPrioritization: string[];
+    resultsAndImpact: string[];
+    risksAndMitigation: string[];
+    learningsAndNextSteps: string[];
   };
   artifacts: CaseStudyArtifacts;
 }
@@ -92,6 +94,14 @@ export interface ResumeBullet {
   caseStudyId?: string;
 }
 
+export interface Education {
+  degree: string;
+  school: string;
+  period: string;
+  location: string;
+  details: string[];
+}
+
 export interface PortfolioData {
   site: SiteData;
   contact: ContactData;
@@ -99,6 +109,7 @@ export interface PortfolioData {
   cases: CaseStudy[];
   skills: string[];
   resume: ResumeBullet[];
+  education: Education;
 }
 
 export enum Theme {
